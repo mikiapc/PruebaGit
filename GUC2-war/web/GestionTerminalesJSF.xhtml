@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Gestion Terminales</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>   
+        <h:dataTable value="#{gestionTerminalesBean.terminales}" var="terminal">
+                     
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Marca"/>
+                </f:facet>
+                <h:outputText value="#{terminal.marca}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Modelo"/>
+                </f:facet>
+                <h:outputText value="#{terminal.modelo}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Tipo"/>
+                </f:facet>
+                <h:outputText value="#{terminal.tipo}"/>               
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Asignado"/>
+                </f:facet>
+                <h:outputText value="#{terminal.idTerminal}"/>
+            </h:column>
+            
+            <h:column>
+                <h:commandButton value="Editar" action="#{gestionTerminalesBean.editarTerminal}">
+                    <f:setPropertyActionListener target="#{gestionTerminalesBean.idModificar}" 
+                                                 value="#{terminal.idTerminal}"/> No funciona
+                </h:commandButton>
+                
+            </h:column>
+            
+            <h:column>
+                <h:commandButton value="Eliminar" action="#{gestionTerminalesBean.eliminarTerminal}">
+                    <f:setPropertyActionListener target="#{gestionTerminalesBean.idModificar}" 
+                                                 value="#{terminal.idTerminal}"/>
+                </h:commandButton>
+                
+            </h:column>
+            
+            
+            
+        </h:dataTable>
+        </h:form>
+        
+        <a href="AltaTerminalJSF.xhtml">Añadir Terminal</a>
+    </h:body>
+</html>
+

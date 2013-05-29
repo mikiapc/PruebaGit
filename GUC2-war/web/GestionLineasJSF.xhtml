@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Gestion Lineas</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <h:dataTable value="#{gestionLineasBean.lineas}" var="linea">
+            
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="N&uacute;mero"/>
+                    </f:facet>
+                    <h:outputText value="#{linea.idLinea}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Operadora"/>
+                    </f:facet>
+                    <h:outputText value="#{linea.operadora}"/>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Terminal Asignado"/>
+                    </f:facet>
+                    <h:outputText value="Por implementar"/>
+                </h:column>
+                
+                <h:column>
+                    
+                    <h:outputText value="Impl. Editar"/>
+                    
+                </h:column>
+                
+                <h:column>
+                    
+                    <h:commandButton value="Eliminar" action="#{gestionLineasBean.eliminarLinea}">
+                        <f:setPropertyActionListener target="#{gestionLineasBean.idModificar}"
+                                                     value="#{linea.idLinea}"/>ok
+                        
+                    </h:commandButton>
+                    
+                </h:column>
+                
+            </h:dataTable>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

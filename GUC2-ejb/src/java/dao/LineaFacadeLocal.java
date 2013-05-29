@@ -26,6 +26,10 @@ public interface LineaFacadeLocal {
     List<Linea> findAll();
 
     List<Linea> findRange(int[] range);
+    
+    List<Linea> findNoBorradas();
+    
+    Linea findById(String id);
 
     int count();
     

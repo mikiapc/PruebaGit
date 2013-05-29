@@ -22,10 +22,16 @@ public interface TerminalFacadeLocal {
     void remove(Terminal terminal);
 
     Terminal find(Object id);
+    
+    Terminal findById(String id);
 
     List<Terminal> findAll();
+    
+    List<Terminal> findNoBorrados();
 
     List<Terminal> findRange(int[] range);
+    
+    
 
     int count();
     

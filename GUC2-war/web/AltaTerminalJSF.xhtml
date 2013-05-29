@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Numero de Serie:<br/>
+            <h:inputText value="#{altaTerminalBean.idTerminal}"/><br/>
+            Marca<br/>
+            <h:inputText value="#{altaTerminalBean.marca}"/><br/>
+            Modelo:<br/>
+            <h:inputText value="#{altaTerminalBean.modelo}"/><br/>
+            Tipo:<br/>
+            <h:inputText value="#{altaTerminalBean.tipo}"/><br/>
+            <h:commandButton value="Agregar" action="#{altaTerminalBean.doNavigation()}"/>
+        </h:form>
+    </h:body>
+</html>
+

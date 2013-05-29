@@ -5,6 +5,7 @@
 package dao;
 
 import entity.Linea;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,6 +26,18 @@ public class LineaFacade extends AbstractFacade<Linea> implements LineaFacadeLoc
 
     public LineaFacade() {
         super(Linea.class);
+    }
+    
+    public List<Linea> findNoBorradas(){
+        return em.createQuery("SELECT l FROM Linea l WHERE l.borrada LIKE 0")
+                .getResultList();
+    }
+    
+         
+    public Linea findById(String id){
+        return (Linea) em.createQuery("SELECT l FROM Linea l WHERE l.idLinea LIKE :custID")
+                .setParameter("custID", id)
+                .getSingleResult();
     }
     
 }
